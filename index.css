@@ -328,6 +328,36 @@ a.buy-now-button {
   margin: 0 40px;
 }
 @media screen and (max-width: 450px) {
+  .header {
+    padding: 40px 20px;
+  }
+  .header {
+    direction: rtl;
+  }
+  .menu ul {
+    direction: ltr;
+  }
+  .menu ul li a {
+    display: none;
+  }
+  .menu ul .menu-buy-btn a {
+    display: block;
+    margin: 0;
+    text-wrap: nowrap;
+  }
+  .first-section {
+    margin-bottom: 60px;
+    flex-direction: column;
+  }
+  .product-description {
+    max-width: 100%;
+  }
+  .product-description h1 {
+    font-size: 44px;
+  }
+  .product-description p {
+    font-size: 16px;
+  }
   .header-text {
     font-size: 22px;
     font-weight: 600;

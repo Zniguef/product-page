@@ -6,15 +6,13 @@
 }
 
 :root {
+  --primary-color: #f8d739;
+  --secondary-color: #f695a1;
+  --text-primary-color: #414141;
+  --text-secondary-color: #7e7d7d;
   --buy-bg-color: #25d366;
-  --title-color: #414141;
-  --p-color: #7e7d7d;
   --buy-text-color: #ffffff;
-  --confirm-btn-bg: #f8d739;
-  --whatsapp-bg-color: #25d366;
-
-  --btn-buy-menu-color: #f695a1;
-  --menu-item-color: #414141;
+  --whatsapp-color: #25d366;
 }
 
 body {

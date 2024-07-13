@@ -138,7 +138,7 @@ a.buy-now-button {
   align-items: center; /* Center vertically */
   text-align: center; /* Center text within the container */
   padding: 20px;
-  height: 100vh; /* Full viewport height to ensure vertical centering */
+  height: auto; /* Full viewport height to ensure vertical centering */
 }
 
 .second-section div {
@@ -188,18 +188,29 @@ a.buy-now-button {
 .benefits-column {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: start;
   gap: 20px;
 }
 
+.right-benefits-column {
+  align-items: start;
+}
+
+.left-benefits-column {
+  align-items: end;
+}
+
 .benefit-item {
+  padding: 35px 0;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .benefit-item p {
-  margin: 0;
+  font-size: 28px;
+  font-weight: 900;
+  margin: 0 10px;
   text-align: left; /* Text from left to right */
 }
 
@@ -237,10 +248,81 @@ a.buy-now-button {
   letter-spacing: 2px;
 }
 
+.header-text-ar {
+  font-size: 64px;
+  width: 100%;
+  min-width: max-content;
+  font-weight: 600;
+  text-wrap: nowrap;
+  text-align: center;
+  color: var(--text-primary-color);
+  letter-spacing: 2px;
+}
+
 .description-text {
   margin-top: 25px;
   font-size: 24px;
   word-spacing: 4px;
   line-height: 130%;
+  width: 35%;
+  max-width: 700px;
   color: var(--text-secondary-color);
+}
+.fa-check {
+  font-size: 24px;
+}
+.second-benifit {
+  margin: 0 40px;
+}
+@media screen and (max-width: 450px) {
+  .header-text {
+    font-size: 22px;
+    font-weight: 600;
+    text-wrap: wrap;
+  }
+  .header-text-ar {
+    font-size: 38px;
+    font-weight: 600;
+    text-wrap: wrap;
+  }
+  .second-section {
+    height: auto;
+    min-width: auto;
+  }
+  .description-text {
+    margin-top: 15px;
+    font-size: 16px;
+    width: 90%;
+    min-width: auto;
+    font-weight: 600;
+  }
+  a.buy-now-button {
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+  .fa-check {
+    font-size: 14px;
+  }
+  .benefits-column {
+    align-items: start;
+  }
+  .benefits-container {
+    gap: 0;
+    justify-content: start;
+  }
+  .benefit-item {
+    padding: 0;
+  }
+  .benefit-item p {
+    padding: 0 0;
+    margin: 0;
+    font-size: 18px;
+  }
+  .second-benifit {
+    margin: 0;
+  }
+  .left-benefits-column {
+    width: 100%;
+    align-items: end;
+  }
 }

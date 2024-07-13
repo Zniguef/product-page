@@ -134,6 +134,7 @@
           <i class="fas fa-check"></i>
         </div>
       </div>
+      
       <div class="benefits-image">
         <img src="/images/first-image-product.png" alt="" style="max-width: 550px; width: 100%;" />
       </div>
@@ -186,41 +187,75 @@
     </svg>
 
     <a href="#buy-section" class="buy-now-button">اشتري الان ب 250 درهم</a>
-  </section>
+    </section>
 
-  <section id="buy-section">
-    <h1>Enter your information and receive your product</h1>
+    <section class="buy-section">
+      <h1>أدخل معلوماتك واستلم منتجك</h1>
 
-    <div class="form">
-      <form action="">
-        <label for="">Product*:</label>
-
-        <label for="">Full name*</label>
-        <input type="text" placeholder="Enter your name" />
-
-        <label for="">Phone number*</label>
-        <input type="text" placeholder="Ex: 0611678143" />
-
-        <label for="">Address*</label>
-        <input type="text" placeholder="Ex: Maarif, Casablanca" />
-
-        <label for="">Quantity*</label>
-        <input type="text" placeholder="alkimya" />
-
-        <div>
-          <p>Total:</p>
-          <span>250dh</span>
-          <button>Confirm</button>
+      <div class="form-container">
+        <div class="form">
+          <form action="">
+            <div class="form-group">
+              <label for="">Product*:</label>
+              <div class="image-selection">
+                <label>
+                  <input type="checkbox" name="product" value="product1" />
+                  <img src="/images/opti-women.png" alt="Product 1" />
+                </label>
+                <label>
+                  <input type="checkbox" name="product" value="" />
+                  <img src="/images/opti-men.png" alt="" />
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="">Full name*</label>
+              <input type="text" placeholder="Enter your name" />
+            </div>
+            <div class="form-group">
+              <label for="">Phone number*</label>
+              <input type="text" placeholder="Ex: 0611678143" />
+            </div>
+            <div class="form-group">
+              <label for="">Address*</label>
+              <input type="text" placeholder="Ex: Maarif, Casablanca" />
+            </div>
+            <div class="form-group">
+              <label for="">Quantity*</label>
+              <input type="text" placeholder="Enter quantity" />
+            </div>
+            <div class="total">
+              <div class="total">
+                <p>Total:</p>
+                <span>250dh</span>
+              </div>
+              <button>Confirm</button>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
 
-    <div class="whatsapp">
-      <label for="">Product*</label>
+        <div class="whatsapp">
+          <div class="form-group">
+            <label for="">Product*:</label>
+            <div class="image-selection">
+              <label>
+                <input type="checkbox" name="product" value="product1" />
+                <img src="/images/opti-women.png" alt="Product 1" />
+              </label>
+              <label>
+                <input type="checkbox" name="product" value="" />
+                <img src="/images/opti-men.png" alt="" />
+              </label>
+            </div>
+          </div>
 
-      <label for="">Message*</label>
-      <textarea name="" id="" placeholder="Please enter your custom message, or send the default one :Hello,
-                       Please I want to buy the product (OPTI-WOMEN) "></textarea>
+          <label for="">Message*</label>
+          <textarea
+            name=""
+            id=""
+            placeholder="Please enter your custom message, or send the default one :Hello,
+                       Please I want to buy the product (OPTI-WOMEN) "
+          ></textarea>
     </div>
   </section>
 </body>

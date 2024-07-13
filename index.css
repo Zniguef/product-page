@@ -1,18 +1,51 @@
 /* variables */
-
-:root {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.buy-now-button {
-  padding: 10px 15px;
-  border: 1px solid #000;
-  border-radius: 5px;
+:root {
+  --buy-bg-color: #25d366;
+  --title-color: #414141;
+  --p-color: #7e7d7d;
+  --buy-text-color: #ffffff;
+  --confirm-btn-bg: #f8d739;
+  --whatsapp-bg-color: #25d366;
+
+  --btn-buy-menu-color: #f695a1;
+  --menu-item-color: #414141;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
   text-decoration: none;
+}
+
+a.buy-now-button {
+  border-radius: 60px;
   color: #fff;
-  background-color: #000;
-  padding: 10px 20px;
-  border-radius: 5px;
+  background-color: var(--buy-bg-color);
+  padding: 18px 39px;
+  border-radius: 60px;
   display: inline-block;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.menu ul li.menu-buy-btn a {
+  border: var(--btn-buy-menu-color);
+  border: 3px solid #f695a1;
+  color: var(--btn-buy-menu-color);
+  padding: 7px 19px;
+  border-radius: 35px;
 }
 
 /* start header */
@@ -37,7 +70,14 @@
 }
 
 .menu ul li {
+  margin-right: 15px;
+}
+
+.menu ul li a {
   margin-right: 20px;
+  color: var(--menu-item-color);
+  font-weight: 500;
+  font-size: 18px;
 }
 
 #header-logo img {

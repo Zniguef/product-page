@@ -329,7 +329,7 @@ a.buy-now-button {
 }
 @media screen and (max-width: 450px) {
   .header {
-    padding: 40px 20px;
+    padding: 40px 20px 0 20px;
   }
   .header {
     direction: rtl;
@@ -347,7 +347,7 @@ a.buy-now-button {
   }
   .first-section {
     margin-bottom: 60px;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .product-description {
     max-width: 100%;
@@ -407,5 +407,12 @@ a.buy-now-button {
   .left-benefits-column {
     width: 100%;
     align-items: end;
+  }
+  .buy-section {
+    padding: 20px 30px;
+  }
+  .form-container {
+    flex-direction: column;
+    gap: 50px;
   }
 }

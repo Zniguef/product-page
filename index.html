@@ -194,42 +194,43 @@
 
     <div class="form-container">
       <div class="form">
-        <form action="">
+        <form action="" onsubmit="myFunction(e)">
           <div class="form-group">
-            <label for="">Product*:</label>
+            <label for="">منتج*</label>
             <div class="image-selection">
               <label>
-                <input type="checkbox" name="product" value="product1" />
+                <input class="chosen-product" type="checkbox" name="product1" value="product1" />
                 <img src="/images/opti-women.png" alt="Product 1" />
               </label>
               <label>
-                <input type="checkbox" name="product" value="" />
+                <input class="chosen-product" type="checkbox" name="product2" value="product2" />
                 <img src="/images/opti-men.png" alt="" />
               </label>
             </div>
           </div>
           <div class="form-group">
-            <label for="">Full name*</label>
-            <input type="text" placeholder="Enter your name" />
+            <label for="">الاسم الكامل*</label>
+            <input type="text" placeholder="أدخل أسمك" />
           </div>
           <div class="form-group">
-            <label for="">Phone number*</label>
-            <input type="text" placeholder="Ex: 0611678143" />
+            <label for="">رقم التليفون*</label>
+            <input type="text" placeholder="مثال: 0611678143" />
           </div>
           <div class="form-group">
-            <label for="">Address*</label>
-            <input type="text" placeholder="Ex: Maarif, Casablanca" />
+            <label for="">عنوان*</label>
+            <input type="text" placeholder="مثال: المعاريف، الدار البيضاء" />
           </div>
           <div class="form-group">
-            <label for="">Quantity*</label>
-            <input type="text" placeholder="Enter quantity" />
+            <label for="">كمية*</label>
+            <input type="number" placeholder="أدخل الكمية" />
           </div>
           <div class="total">
+            
+            <button>تأكيد</button>
             <div class="total">
-              <p>Total:</p>
+              <p>المجموع:</p>
               <span>250dh</span>
             </div>
-            <button>Confirm</button>
           </div>
         </form>
       </div>
@@ -239,11 +240,11 @@
           <label for="">Product*:</label>
           <div class="image-selection">
             <label>
-              <input type="checkbox" name="product" value="product1" />
+              <input class="chosen-product" type="checkbox" name="product" value="product1" />
               <img src="/images/opti-women.png" alt="Product 1" />
             </label>
             <label>
-              <input type="checkbox" name="product" value="" />
+              <input class="chosen-product" type="checkbox" name="product" value="" />
               <img src="/images/opti-men.png" alt="" />
             </label>
           </div>
@@ -254,6 +255,9 @@
                        Please I want to buy the product (OPTI-WOMEN) "></textarea>
       </div>
   </section>
+  <script src="index.js">
+
+  </script>
 </body>
 
 </html>

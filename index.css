@@ -40,10 +40,11 @@ a.buy-now-button {
 
 .menu ul li.menu-buy-btn a {
   border: var(--btn-buy-menu-color);
-  border: 3px solid #f695a1;
+  border: 3px solid var(--secondary-color);
   color: var(--btn-buy-menu-color);
   padding: 7px 19px;
   border-radius: 35px;
+  color: var(--secondary-color);
 }
 
 /* start header */

@@ -1,130 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product page</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <section class="header">
-      <menu class="menu">
-        <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Product</a></li>
-          <li><a href="">About</a></li>
-          <li class="menu-buy-btn"><a href="">BUY NOW</a></li>
-        </ul>
-      </menu>
-      <div id="header-logo"><img src="" alt="Logo" /></div>
-    </section>
 
-    <section class="first-section">
-      <div class="product-description">
-        <h1>Take care of health</h1>
-        <p>
-          Unlock your full potential with OPTI-MEN / OPTI-WOMEN, the ultimate
-          multivitamin designed for the modern man / women. Formulated to
-          support your nutritional needs, OPTI-MEN / OPTI-WOMEN provides a
-          comprehensive blend of vitamins, minerals, and essential nutrients
-          that are vital for overall health and peak performance
-        </p>
-        <a href="" class="buy-now-button">اشتري الان ب 250 درهم</a>
-      </div>
-      <div>
-        <img src="/images/first-image-product.png" alt="product-image" />
-      </div>
-    </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product page</title>
+  <!-- css -->
+  <link rel="stylesheet" href="index.css" />
 
-    <section class="second-section">
-      <div>
-        <h1>OPTI-MEN / OPTI-WOMEN</h1>
-        <p>
-          Take three tablets daily with food to support your nutrient intake.
-          For best results, use in conjunction with a balanced diet and regular
-          exercise routine.
-        </p>
-        <img src="/images/second-product-image.png" alt="" />
-        <a href="" class="buy-now-button">اشتري الان ب 250 درهم</a>
-      </div>
-    </section>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+</head>
 
-    <section class="benefits">
-      <h1>THE BENEFITS</h1>
-      <div class="benefits-container">
-        <div class="benefits-column">
-          <div class="benefit-item">
-            <i class="fas fa-bolt"></i>
-            <p>Energy & Metabolism</p>
-          </div>
-          <div class="benefit-item">
-            <i class="fas fa-heart"></i>
-            <p>Cardiovascular Health</p>
-          </div>
-          <div class="benefit-item">
-            <i class="fas fa-brain"></i>
-            <p>Brain Health</p>
-          </div>
+<body>
+  <section class="header">
+    <menu class="menu">
+      <ul>
+        <li><a href="">الرئيسية</a></li>
+        <li><a href="">المنتج</a></li>
+        <li><a href="">حول</a></li>
+        <li class="menu-buy-btn"><a href="#buy-section">اشتري الآن</a></li>
+      </ul>
+    </menu>
+    <div id="header-logo"><img src="" alt="Logo" /></div>
+  </section>
+
+  <section class="first-section">
+    <div class="product-description">
+      <h1>Take care of health</h1>
+      <p>
+        Unlock your full potential with OPTI-MEN / OPTI-WOMEN, the ultimate
+        multivitamin designed for the modern man / women. Formulated to
+        support your nutritional needs, OPTI-MEN / OPTI-WOMEN provides a
+        comprehensive blend of vitamins, minerals, and essential nutrients
+        that are vital for overall health and peak performance
+      </p>
+      <a href="#buy-section" class="buy-now-button">اشتري الان ب 250 درهم</a>
+    </div>
+    <div>
+      <img src="/images/first-image-product.png" alt="product-image" />
+    </div>
+  </section>
+
+  <section class="second-section">
+    <div>
+      <h1>OPTI-MEN / OPTI-WOMEN</h1>
+      <p>
+        Take three tablets daily with food to support your nutrient intake.
+        For best results, use in conjunction with a balanced diet and regular
+        exercise routine.
+      </p>
+      <img src="/images/second-product-image.png" alt="" />
+      <a href="#buy-section" class="buy-now-button">اشتري الان ب 250 درهم</a>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <h1>THE BENEFITS</h1>
+    <div class="benefits-container">
+      <div class="benefits-column">
+        <div class="benefit-item">
+          <i class="fas fa-bolt"></i>
+          <p>Energy & Metabolism</p>
         </div>
-        <div class="benefits-image">
-          <img src="/images/benefits-product-img.png" alt="Product Image" />
+        <div class="benefit-item">
+          <i class="fas fa-heart"></i>
+          <p>Cardiovascular Health</p>
         </div>
-        <div class="benefits-column">
-          <div class="benefit-item">
-            <i class="fas fa-dumbbell"></i>
-            <p>Muscle Support</p>
-          </div>
-          <div class="benefit-item">
-            <i class="fas fa-shield-alt"></i>
-            <p>Immune System</p>
-          </div>
-          <div class="benefit-item">
-            <i class="fas fa-leaf"></i>
-            <p>Antioxidants</p>
-          </div>
+        <div class="benefit-item">
+          <i class="fas fa-brain"></i>
+          <p>Brain Health</p>
         </div>
       </div>
-      <a href="" class="buy-now-button">اشتري الان ب 250 درهم</a>
-    </section>
-
-    <section>
-      <h1>Enter your information and receive your product</h1>
-
-      <div class="form">
-        <form action="">
-          <label for="">Product*:</label>
-
-          <label for="">Full name*</label>
-          <input type="text" placeholder="Enter your name" />
-
-          <label for="">Phone number*</label>
-          <input type="text" placeholder="Ex: 0611678143" />
-
-          <label for="">Address*</label>
-          <input type="text" placeholder="Ex: Maarif, Casablanca" />
-
-          <label for="">Quantity*</label>
-          <input type="text" placeholder="alkimya" />
-
-          <div>
-            <p>Total:</p>
-            <span>250dh</span>
-            <button>Confirm</button>
-          </div>
-        </form>
+      <div class="benefits-image">
+        <img src="/images/benefits-product-img.png" alt="Product Image" />
       </div>
-
-      <div class="whatsapp">
-        <label for="">Product*</label>
-
-        <label for="">Message*</label>
-        <textarea
-          name=""
-          id=""
-          placeholder="Please enter your custom message, or send the default one :Hello,
-                       Please I want to buy the product (OPTI-WOMEN) "
-        ></textarea>
+      <div class="benefits-column">
+        <div class="benefit-item">
+          <i class="fas fa-dumbbell"></i>
+          <p>Muscle Support</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-shield-alt"></i>
+          <p>Immune System</p>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-leaf"></i>
+          <p>Antioxidants</p>
+        </div>
       </div>
-    </section>
-  </body>
+    </div>
+    <a href="#buy-section" class="buy-now-button">اشتري الان ب 250 درهم</a>
+  </section>
+
+  <section id="buy-section">
+    <h1>Enter your information and receive your product</h1>
+
+    <div class="form">
+      <form action="">
+        <label for="">Product*:</label>
+
+        <label for="">Full name*</label>
+        <input type="text" placeholder="Enter your name" />
+
+        <label for="">Phone number*</label>
+        <input type="text" placeholder="Ex: 0611678143" />
+
+        <label for="">Address*</label>
+        <input type="text" placeholder="Ex: Maarif, Casablanca" />
+
+        <label for="">Quantity*</label>
+        <input type="text" placeholder="alkimya" />
+
+        <div>
+          <p>Total:</p>
+          <span>250dh</span>
+          <button>Confirm</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="whatsapp">
+      <label for="">Product*</label>
+
+      <label for="">Message*</label>
+      <textarea name="" id="" placeholder="Please enter your custom message, or send the default one :Hello,
+                       Please I want to buy the product (OPTI-WOMEN) "></textarea>
+    </div>
+  </section>
+</body>
+
 </html>

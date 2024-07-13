@@ -35,6 +35,10 @@ a.buy-now-button {
   display: inline-block;
   font-size: 22px;
   font-weight: 600;
+  margin-bottom: 120px;
+}
+.home-huy-btn {
+  margin-bottom: 20px !important;
 }
 
 .menu ul li.menu-buy-btn a {
@@ -88,12 +92,22 @@ a.buy-now-button {
 /* start first section */
 
 .first-section {
+  min-height: calc(100vh - 100px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   margin-bottom: 125px;
   background-color: #f5f5f5;
+}
+
+.first-img {
+  position: relative;
+  z-index: 1;
+  width: 45%;
+  display: flex;
+  justify-content: left;
+  align-items: start;
 }
 
 .product-description {
@@ -103,17 +117,17 @@ a.buy-now-button {
 }
 
 .product-description h1 {
-  margin-bottom: 10px;
-  font-size: 50px;
+  margin-bottom: 50px;
+  font-size: 80px;
 }
 
 .product-description p {
   margin-bottom: 20px;
-  font-size: 19px;
+  font-size: 24px;
   line-height: 1.8;
   color: var(--text-secondary-color);
   max-width: 90%;
-  margin: 20px 0 30px 0;
+  margin: 20px 0 70px 0;
 }
 
 .first-section .img-container {
@@ -349,6 +363,9 @@ a.buy-now-button {
     margin-bottom: 60px;
     flex-direction: column-reverse;
   }
+  .first-img {
+    width: 100%;
+  }
   .product-description {
     max-width: 100%;
   }
@@ -357,6 +374,7 @@ a.buy-now-button {
   }
   .product-description p {
     font-size: 16px;
+    margin: 20px 0 30px 0;
   }
   .header-text {
     font-size: 22px;
@@ -382,6 +400,7 @@ a.buy-now-button {
   a.buy-now-button {
     font-size: 16px;
     padding: 15px 30px;
+    margin-bottom: 20px;
   }
   .fa-check {
     font-size: 14px;

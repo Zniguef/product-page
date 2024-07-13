@@ -31,11 +31,10 @@ a.buy-now-button {
   border-radius: 60px;
   color: #fff;
   background-color: var(--buy-bg-color);
-  padding: 18px 39px;
-  border-radius: 60px;
+  padding: 20px 55px;
   display: inline-block;
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .menu ul li.menu-buy-btn a {
@@ -118,6 +117,8 @@ a.buy-now-button {
 
 .second-section {
   display: flex;
+  flex-direction: column;
+  min-width: max-content;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   text-align: center; /* Center text within the container */
@@ -208,3 +209,23 @@ a.buy-now-button {
 }
 
 /* end benefits section */
+
+/* global custom classes */
+.header-text {
+  font-size: 64px;
+  width: 100%;
+  min-width: max-content;
+  font-weight: 600;
+  text-wrap: nowrap;
+  text-align: center;
+  color: var(--text-primary-color);
+  letter-spacing: 2px;
+}
+
+.description-text {
+  margin-top: 25px;
+  font-size: 24px;
+  word-spacing: 4px;
+  line-height: 130%;
+  color: var(--text-secondary-color);
+}

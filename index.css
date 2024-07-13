@@ -251,6 +251,7 @@ a.buy-now-button {
 /* end benefits section */
 
 /* global custom classes */
+
 .header-text {
   font-size: 64px;
   width: 100%;
@@ -284,14 +285,26 @@ a.buy-now-button {
 }
 
 /* Start form */
+
 .buy-section {
   margin-top: 30px;
   padding: 0 90px;
 }
 
-.buy-section h1 {
+.buy-section .title {
   display: flex;
   justify-content: center;
+  direction: rtl;
+  color: var(--text-primary-color);
+  font-weight: 700;
+  font-size: 45px;
+  margin-bottom: 40px;
+}
+
+.buy-section .sub-title {
+  text-wrap: nowrap;
+  display: flex;
+  justify-content: start;
   direction: rtl;
   color: var(--primary-color);
   font-weight: 700;
@@ -299,18 +312,58 @@ a.buy-now-button {
   margin-bottom: 40px;
 }
 
+.buy-section .sub-title.whatsapp {
+  color: var(--whatsapp-color);
+}
+
 .buy-section .form-container {
+  margin: 100px 0;
   display: flex;
   justify-content: space-between;
 }
 
 .buy-section .form-container .form {
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
 
-  /* background-color: red; */
+.buy-section .form-container .whatsapp {
+  align-items: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 45%;
+}
+
+.buy-section .form-container .or {
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary-color);
+  justify-content: center;
+  height: inherit;
+  position: relative;
+}
+.buy-section .form-container .or::after {
+  content: "";
+  background-color: var(--text-secondary-color);
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 0.5px);
+  width: 1px;
+  height: calc(40% + 40px);
+}
+.buy-section .form-container .or::before {
+  content: "";
+  background-color: var(--text-secondary-color);
+  position: absolute;
+  bottom: -40px;
+  left: calc(50% - 0.5px);
+  width: 1px;
+  height: calc(40% + 40px);
 }
 
 .buy-section .form-container .form .form-group {
@@ -430,8 +483,24 @@ a.buy-now-button {
   .buy-section {
     padding: 20px 30px;
   }
-  .form-container {
+  .buy-section .form-container {
+    margin-top: 10px;
     flex-direction: column;
     gap: 50px;
+  }
+  .buy-section .title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 36px;
+  }
+  .buy-section .sub-title {
+    font-size: 28px;
+  }
+  .buy-section .form-container .form {
+    width: 100%;
+  }
+  .buy-section .form-container .whatsapp {
+    width: 100%;
   }
 }

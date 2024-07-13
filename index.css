@@ -39,10 +39,11 @@ a.buy-now-button {
 
 .menu ul li.menu-buy-btn a {
   border: var(--btn-buy-menu-color);
-  border: 3px solid #f695a1;
+  border: 3px solid var(--secondary-color);
   color: var(--btn-buy-menu-color);
   padding: 7px 19px;
   border-radius: 35px;
+  color: var(--secondary-color);
 }
 
 /* start header */
@@ -51,7 +52,8 @@ a.buy-now-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 40px 90px;
+  background-color: #f5f5f5;
 }
 
 .menu {
@@ -90,6 +92,8 @@ a.buy-now-button {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  margin-bottom: 125px;
+  background-color: #f5f5f5;
 }
 
 .product-description {
@@ -100,15 +104,26 @@ a.buy-now-button {
 
 .product-description h1 {
   margin-bottom: 10px;
+  font-size: 50px;
 }
 
 .product-description p {
   margin-bottom: 20px;
+  font-size: 19px;
+  line-height: 1.8;
+  color: var(--text-secondary-color);
+  max-width: 90%;
+  margin: 20px 0 30px 0;
+}
+
+.first-section .img-container {
+  direction: rtl;
 }
 
 .first-section img {
-  max-width: 35%;
+  max-width: 100%;
   height: auto;
+  width: 550px;
 }
 
 /* end first section */

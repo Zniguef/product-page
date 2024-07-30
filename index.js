@@ -1,84 +1,58 @@
-const year = document.getElementById("year");
-year.textContent = new Date().getFullYear();
+var r = document.querySelector(":root");
 
-const form = document.getElementById("buy-here-form");
-const checkboxes = form.querySelectorAll(".chosen-product");
-const totalpriceform = document.getElementById("total-price-form");
-const quantityform = document.getElementById("quantity-form");
-const price = 250;
+function csvJSON(csv) {
+  const lines = csv.split("\n");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  let result = [];
+  const headers = lines[0].split(",");
 
-  // Check if at least one checkbox is checked
-  let atLeastOneChecked = false;
+  for (let i = 1; i < lines.length; i++) {
+    let obj = {};
+    const currentline = lines[i].split(",");
 
-  checkboxes.forEach(function (checkbox) {
-    if (checkbox.checked) {
-      atLeastOneChecked = true;
+    for (let j = 0; j < headers.length; j++) {
+      currentline[j] = currentline[j]?.replace("\r", "")?.trim();
+      obj[headers[j].trim()] = currentline[j]?.trim();
     }
-  });
 
-  if (!atLeastOneChecked) {
-    // Set custom validity to show error message like HTML required attribute
-    checkboxes[0].setCustomValidity("يجب اختيار منتج واحد على الأقل");
-
-    // Trigger validation check to display the error message immediately
-    form.reportValidity();
-  } else {
-    checkboxes[0].setCustomValidity("");
-
-    // Proceed with form submission or further processing
-    const formData = new FormData(form);
-    const formObject = {};
-
-    formData.forEach((value, key) => {
-      if (formObject[key]) {
-        if (!Array.isArray(formObject[key])) {
-          formObject[key] = [formObject[key]];
-        }
-        formObject[key].push(value);
-      } else {
-        formObject[key] = value;
-      }
-    });
-
-    // Optionally, you can reset custom validity after successful validation
-    // checkboxes[0].setCustomValidity('');
-
-    // Submit the form programmatically
-    // form.submit();
+    result.push(obj);
   }
-});
 
-function calculatePrice() {
-  const quantity =
-    Number(quantityform.value) === NaN ? 0 : Number(quantityform.value);
-
-  let checkedBoxes = 0;
-  checkboxes.forEach((ch) => {
-    if (ch.checked) {
-      checkedBoxes++;
-    }
-  });
-
-  const total = price * quantity * checkedBoxes;
-  totalpriceform.textContent = total + " درهم";
+  return result;
 }
-// Reset custom validity message when any checkbox is checked
-checkboxes.forEach(function (checkbox) {
-  checkbox.addEventListener("change", function () {
-    calculatePrice();
-    const atLeastOneChecked = [...checkboxes].some(
-      (checkbox) => checkbox.checked
-    );
 
-    if (atLeastOneChecked) {
-      checkboxes[0].setCustomValidity("");
-    }
-  });
-});
+async function getProductInfo() {
+  const products = await fetch(
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRvdPYGymrRD4h1QFDE7XszscyA6CBkjOAVZTYA80eY_8ff-YX-RklioBEFeZ2fzxj5KdbXtHeoCvCL/pub?gid=0&single=true&output=csv"
+  )
+    .then((response) => response.text())
+    .then((data) => csvJSON(data));
 
-quantityform.addEventListener("change", function () {
-  calculatePrice();
-});
+  const productId = window.location.search.replace("?id=", "");
+
+  const product = products.find((pr) => pr?.id === productId);
+  console.log(product);
+  console.log(product?.primaryTextColor);
+  if (product !== null) {
+    r.style.setProperty("--primary", product?.primaryColor ?? "lightcoral");
+    r.style.setProperty("--primary-text", product?.primaryTextColor ?? "red");
+    document.getElementById("product-name").textContent +=
+      product?.name ?? "مرحباً";
+    document.querySelectorAll("#product_img").forEach((el) => {
+      el.setAttribute("src", product?.img);
+    });
+    document.getElementById("desc").textContent = product?.description;
+    document.getElementById("header_title").textContent = product?.title;
+    document.getElementById("sec-sec-prod-name").textContent = product?.name;
+    document.getElementById("sec-sec-desc").textContent = product?.secSecDesc;
+
+    document.querySelectorAll("#buyNow").forEach((el) => {
+      el.textContent += product?.price;
+    });
+  }
+
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("container").style.display = "inline-block";
+}
+
+getProductInfo();

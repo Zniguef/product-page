@@ -1,5 +1,10 @@
 :root {
   --whatsapp: #25d366;
+  --buyNow: #2bb3ee;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -67,7 +72,8 @@ body {
   text-decoration: underline;
 }
 
-.navbar .list li button {
+.navbar .list li .button {
+  cursor: pointer;
   font-size: 20px;
   padding: 10px 30px;
   font-weight: 500;
@@ -76,6 +82,13 @@ body {
   border: 4px solid var(--primary-text);
   border-radius: 100px;
   background: transparent;
+  transition: 0.2s;
+}
+
+.navbar .list li .button:hover {
+  background-color: #fff;
+  text-decoration: none;
+  color: var(--primary);
 }
 
 .first_sec {
@@ -177,19 +190,326 @@ body {
   height: auto;
 }
 
+.third-sec {
+  width: auto;
+  padding: 60px 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.third-sec h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #414141;
+}
+
+.third-sec .content {
+  margin: 60px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.third-sec .content .third-sec-bg {
+  padding: 100px 250px 100px 80px;
+  position: relative;
+  transform: translateX(-10%);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--primary);
+  border-radius: 40px;
+  max-width: 900px;
+}
+
+.third-sec .content .third-sec-bg .benifits {
+  display: grid;
+  row-gap: 30px;
+  column-gap: 20px;
+  grid-template: auto auto auto auto / max-content max-content;
+}
+
+.third-sec .content .third-sec-bg .benifits .benifit-elem {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.third-sec .content .third-sec-bg .benifits .benifit-elem span {
+  font-size: 24px;
+  color: #fff;
+}
+
+.third-sec .content .third-sec-bg .benifits .benifit-elem:last-child {
+  grid-column-start: 1;
+}
+
+.third-sec .content .third-sec-bg #product_img {
+  width: 35%;
+  min-width: 250px;
+  max-width: 400px;
+  top: 50%;
+  right: 0%;
+  transform: translate(50%, -50%);
+  position: absolute;
+}
+
+.check-icon {
+  height: 20px;
+  width: fit-content;
+}
+
+.fourth-sec {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.fourth-sec h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #414141;
+}
+
+.fourth-sec #reviews {
+  display: grid;
+  grid-template: auto auto auto / auto auto auto;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 120px;
+}
+
+.fourth-sec #reviews .review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  width: 250px;
+  padding: 22px 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.fourth-sec #reviews .review-card h1 {
+  font-size: 25px;
+  font-weight: 600;
+  color: #414141;
+}
+
+.fourth-sec #reviews .review-card span {
+  font-size: 14px;
+  color: #7e7d7d;
+  width: 100%;
+  text-align: right;
+}
+
+.fourth-sec #reviews .review-card:last-child {
+  justify-content: center;
+  align-items: center;
+}
+
+.fourth-sec #reviews .review-card:last-child h1 {
+  font-size: 32px;
+  direction: rtl;
+}
+
+.buy-section {
+  margin-top: 150px;
+  padding: 0 90px;
+}
+
+.buy-section .title {
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+  color: black;
+  font-weight: 700;
+  font-size: 45px;
+  margin-bottom: 40px;
+}
+
+.buy-section .sub-title {
+  text-wrap: nowrap;
+  display: flex;
+  justify-content: start;
+  direction: rtl;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 45px;
+}
+
+.buy-section .sub-title.whatsapp-title {
+  color: var(--whatsapp);
+}
+
+.buy-section .form-container {
+  padding: 60px 0 100px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buy-section .form-container .form {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  direction: rtl;
+}
+
+.buy-section .form-container .whatsapp {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 45%;
+}
+
+.buy-section .form-container .whatsapp .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-from-whatsapp {
+  margin-top: 30px;
+  padding: 10px 120px;
+  background-color: var(--whatsapp);
+  border-radius: 35px;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.buy-section .form-container .or {
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  color: #7e7d7d;
+  justify-content: center;
+  height: inherit;
+  position: relative;
+}
+.buy-section .form-container .or::after {
+  content: "";
+  background-color: #7e7d7d;
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 0.5px);
+  width: 1px;
+  height: calc(40% + 40px);
+}
+.buy-section .form-container .or::before {
+  content: "";
+  background-color: #7e7d7d;
+  position: absolute;
+  bottom: -40px;
+  right: calc(50% - 0.5px);
+  width: 1px;
+  height: calc(40% + 40px);
+}
+
+.buy-section .form-container .form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.image-selection input.chosen-product {
+  cursor: pointer;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 3px;
+  border: 2px solid #7e7d7d;
+  outline: none;
+}
+
+.buy-section .form-container .form .form-group label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #7e7d7d;
+}
+
+.buy-section .form-container .form .form-group input {
+  height: 45px;
+  padding-right: 17px;
+  border-radius: 9px;
+  border-color: #7e7d7d;
+  outline: none;
+  background: #fbfbfb;
+  border: 1px solid #7e7d7d;
+}
+
+.form .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-top: 30px;
+}
+
+.form .total .total {
+  margin: 0;
+}
+
+.total {
+  display: flex;
+  gap: 10px;
+}
+
+.total span,
+.total p {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.total button {
+  padding: 10px 30px;
+  background-color: var(--primary);
+  border-radius: 35px;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+}
+
 .buyNow {
   cursor: pointer;
   padding: 20px 70px;
   font-size: 20px;
   font-weight: 700;
   color: white;
-  background-color: var(--whatsapp);
+  background-color: var(--buyNow);
   border-radius: 100px;
   border: none;
   transition: 0.3s;
 }
 .buyNow:hover {
-  box-shadow: 0 0 10px var(--whatsapp);
+  box-shadow: 0 0 10px var(--buyNow);
+}
+
+#error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: #533eb2;
+}
+
+#error-page .blob {
+  width: 70%;
 }
 
 @media screen and (max-width: 1836px) {
@@ -218,11 +538,42 @@ body {
     font-size: 20px;
   }
   .sec-sec .content h1 {
-    font-size: 40px;
+    font-size: 50px;
   }
   .sec-sec .content div p {
     font-size: 24px;
     padding: 40px 0;
+  }
+  .third-sec h1 {
+    font-size: 50px;
+  }
+  .third-sec .content {
+    margin: 60px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .third-sec .content .third-sec-bg {
+    padding: 70px 170px 70px 40px;
+    transform: translate(-5%);
+  }
+  .third-sec .content .third-sec-bg .benifits .benifit-elem {
+    gap: 10px;
+  }
+  .third-sec .content .third-sec-bg .benifits .benifit-elem span {
+    font-size: 20px;
+  }
+  .third-sec .content .third-sec-bg #product_img {
+    transform: translate(40%, -50%);
+  }
+  .check-icon {
+    height: 15px;
+  }
+  .fourth-sec h1 {
+    font-size: 50px;
+  }
+  #error-page .blob {
+    width: 100%;
   }
 }
 
@@ -245,7 +596,7 @@ body {
   .navbar .list li a {
     font-size: 18px;
   }
-  .navbar .list li button {
+  .navbar .list li .button {
     font-size: 16px;
     padding: 10px 30px;
   }
@@ -290,6 +641,26 @@ body {
   .sec-sec .content div p {
     text-align: center;
   }
+  .third-sec {
+    padding: 60px 30px;
+  }
+  .third-sec .content .third-sec-bg .benifits {
+    grid-template: auto auto auto auto / max-content;
+  }
+  .third-sec .content .third-sec-bg {
+    padding: 80px 150px 80px 60px;
+  }
+  .third-sec .content .third-sec-bg #product_img {
+    top: auto;
+    bottom: 0;
+    transform: translate(20%, 20%);
+  }
+  .fourth-sec #reviews {
+    grid-template: auto auto / auto auto;
+  }
+  .fourth-sec #reviews .review-card:nth-child(8) {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -309,6 +680,64 @@ body {
   }
   .sec-sec .content div p {
     width: 100%;
+  }
+  .third-sec .content .third-sec-bg {
+    padding: 60px 100px 60px 30px;
+  }
+  .fourth-sec #reviews {
+    gap: 0;
+  }
+  .fourth-sec #reviews .review-card {
+    scale: 0.8;
+  }
+  .fourth-sec #reviews .review-card:nth-child(8) {
+    display: none;
+  }
+  .buy-section {
+    margin-top: 100px;
+    padding: 20px 30px;
+  }
+  .buy-from-whatsapp {
+    text-decoration: none;
+    font-size: 28px;
+    padding: 10px 0;
+    max-width: 400px;
+    width: 100%;
+  }
+  .buy-section .form-container {
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 50px;
+    padding: 30px 0;
+  }
+  .buy-section .title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 36px;
+  }
+  .buy-section .sub-title {
+    font-size: 28px;
+  }
+  .buy-section .form-container .form {
+    width: 100%;
+  }
+  .buy-section .form-container .whatsapp {
+    width: 100%;
+  }
+  .buy-section .form-container .or::after {
+    content: "";
+    top: calc(50% - 0.5px);
+    left: 0;
+    width: 40%;
+    height: 1px;
+  }
+  .buy-section .form-container .or::before {
+    content: "";
+    top: calc(50% - 0.5px);
+    right: 0;
+    width: 40%;
+    height: 1px;
   }
 }
 
@@ -332,12 +761,73 @@ body {
   .navbar .list li:last-child {
     display: inline-block;
   }
+  .sec-sec .content {
+    width: 70%;
+  }
+  .sec-sec .content h1 {
+    font-size: 40px;
+  }
   .sec-sec .content div p {
     font-size: 18px;
+  }
+  .third-sec {
+    padding-top: 0px;
+  }
+  .third-sec h1 {
+    font-size: 40px;
+  }
+  .third-sec .content {
+    margin-top: 40px;
+  }
+  .third-sec .content .third-sec-bg {
+    transform: translateX(0);
+    max-width: 100%;
+    flex-direction: column;
+    padding: 50px 30px;
+    gap: 30px;
+  }
+  .third-sec .content .third-sec-bg .benifits {
+    grid-template: auto auto auto auto / 100%;
+    width: 100%;
+    gap: 15px;
+  }
+  .third-sec .content .third-sec-bg .benifits .benifit-elem span {
+    text-align: right;
+    text-wrap: wrap;
+  }
+  .third-sec .content .third-sec-bg .benifits .benifit-elem {
+    gap: 20px;
+    flex-direction: row-reverse;
+    justify-content: end;
+  }
+  .third-sec .content .third-sec-bg #product_img {
+    min-width: auto;
+    width: 80%;
+    max-width: 300px;
+    bottom: auto;
+    right: auto;
+    transform: translate(0, 0);
+    position: relative;
+  }
+  .fourth-sec h1 {
+    font-size: 40px;
+  }
+  .fourth-sec #reviews {
+    padding: 20px 0;
+    grid-template: auto / auto;
+  }
+  .fourth-sec #reviews .review-card:nth-child(6) {
+    display: none;
+  }
+  .fourth-sec #reviews .review-card:nth-child(7) {
+    display: none;
   }
   .buyNow {
     font-size: 16px;
     padding: 20px 50px;
+  }
+  #error-page .blob {
+    width: 150%;
   }
 }
 
@@ -361,5 +851,33 @@ body {
   }
   .navbar .list li:last-child {
     display: none;
+  }
+  .third-sec .content {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .third-sec {
+    padding: 0 10px;
+  }
+  .third-sec .content .third-sec-bg {
+    padding: 50px 30px 50px 20px;
+  }
+  .third-sec .content .third-sec-bg .benifits .benifit-elem {
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .third-sec .content .third-sec-bg .benifits .benifit-elem span {
+    font-size: 18px;
+  }
+  .check-icon {
+    height: 15px;
+  }
+  .fourth-sec #reviews {
+    gap: -100px;
+  }
+  .fourth-sec #reviews .review-card {
+    scale: 0.7;
   }
 }

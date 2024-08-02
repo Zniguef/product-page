@@ -23,15 +23,15 @@
     loading...
   </div>
   <div class="container" id="container">
-    <div class="first_sec">
+    <div class="first_sec" id="home">
       <div class="navbar">
         <div class="product-name" id="product-name">
         </div>
         <ul class="list">
-          <li><a href="#">الرئيسية</a></li>
-          <li><a href="#">المنتج</a></li>
-          <li><a href="#">الفوائد</a></li>
-          <li><button type="button">اشتري الآن</button></li>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#benifits">الفوائد</a></li>
+          <li><a href="#reviews-sec">الآراء</a></li>
+          <li><a class="button" href="#buy-section">اشتري الآن</a></li>
         </ul>
       </div>
       <div class="content">
@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div class="sec-sec">
+    <div class="sec-sec" id="product">
       <div class="content">
         <h1 id="sec-sec-prod-name">
         </h1>
@@ -53,12 +53,119 @@
           <p id="sec-sec-desc"></p>
           <img id="product_img" />
         </div>
-        <button type="button" class="buyNow" id="buyNow">
+        <a href="#buy-section" class="buyNow" id="buyNow">
           اشتري الان ب
-        </button>
+        </a>
       </div>
-
     </div>
+
+    <div class="third-sec" id="benifits">
+      <h1>
+        The benifits
+      </h1>
+      <div class="content">
+        <div class="third-sec-bg">
+          <div class="benifits" id="benifits-list"></div>
+          <img id="product_img" />
+        </div>
+      </div>
+      <a href="#buy-section" class="buyNow" id="buyNow">
+        اشتري الان ب
+      </a>
+    </div>
+
+    <div class="fourth-sec" id="reviews-sec">
+      <h1>
+        Reviews
+      </h1>
+      <div id="reviews">
+
+      </div>
+      <a href="#buy-section" class="buyNow" id="buyNow">
+        اشتري الان ب
+      </a>
+    </div>
+
+    <section id="buy-section" class="buy-section" style="position: relative;">
+      <h1 class="title">أدخل معلوماتك واستلم منتجك</h1>
+
+      <div class="form-container" style="position: relative;">
+        <div class="form">
+          <form id="buy-here-form">
+            <h1 class="sub-title">اشتري هنا </h1>
+            <div class="form-group">
+              <label for="">الاسم الكامل*</label>
+              <input type="text" name="name" placeholder="أدخل أسمك" required
+                oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')" oninput="this.setCustomValidity('')" />
+            </div>
+            <div class="form-group">
+              <label for="">رقم التليفون*</label>
+              <input type="text" name="phone" placeholder="مثال: 0611678143" required
+                oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')" oninput="this.setCustomValidity('')" />
+            </div>
+            <div class="form-group">
+              <label for="">عنوان*</label>
+              <input type="text" name="address" placeholder="مثال: المعاريف، الدار البيضاء" required
+                oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')" oninput="this.setCustomValidity('')" />
+            </div>
+            <div class="form-group">
+              <label for="">كمية*</label>
+              <input type="number" name="quantity" placeholder="أدخل الكمية" required id="quantity-form" min="1"
+                value="1" oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')"
+                oninput="this.setCustomValidity('')" />
+            </div>
+            <div class="total">
+              <button type="submit">تأكيد</button>
+              <div class="total">
+                <p>المجموع:</p>
+                <span id="total-price-form">0 درهم</span>
+              </div>
+            </div>
+          </form>
+
+        </div>
+
+        <div class="or">
+          <span>أو</span>
+        </div>
+
+        <div class="whatsapp">
+          <div class="form-group">
+            <h1 class="sub-title whatsapp-title">اشتري من الواتساب </h1>
+          </div>
+          <a class="buy-from-whatsapp" href="https://wa.me/212619548744" target="_blank">ارسال</a>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div id="error-page" style="display: none;">
+    <img class="blob" src="./images/error.svg" />
 
   </div>
   <script src="index.js"></script>

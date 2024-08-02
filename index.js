@@ -132,6 +132,18 @@ async function getProductInfo() {
 
   if (product != null) {
     getReviews();
+    window.addEventListener("resize", () => {
+      document.getElementById("reviews").innerHTML = `
+        <div>
+        </div>
+        <h1 style="font-size: 20px; display: flex; flex-direction: column; gap: 10px; margin: 50px 0; justify-content: center; align-items:center;">
+          <img src="./images/loading.gif" style="width: 70px;" />
+          getting reviews...
+        </h1>
+        <div>
+        </div>`;
+      getReviews();
+    });
   } else {
     document.getElementById("loading").style.display = "none";
 
@@ -184,16 +196,3 @@ quantityform.addEventListener("change", function () {
 });
 
 getProductInfo();
-
-window.addEventListener("resize", () => {
-  document.getElementById("reviews").innerHTML = `
-  <div>
-  </div>
-  <h1 style="font-size: 20px; display: flex; flex-direction: column; gap: 10px; margin: 50px 0; justify-content: center; align-items:center;">
-    <img src="./images/loading.gif" style="width: 70px;" />
-    getting reviews...
-  </h1>
-  <div>
-  </div>`;
-  getReviews();
-});

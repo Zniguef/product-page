@@ -6,6 +6,7 @@ const totalpriceform = document.getElementById("total-price-form");
 const quantityform = document.getElementById("quantity-form");
 
 let price = 1;
+let reviewsSize = window.innerWidth > 600 ? 8 : 4;
 
 function csvJSON(csv) {
   const lines = csv.split("\n");
@@ -39,6 +40,7 @@ function csvJSON(csv) {
 }
 
 async function getReviews() {
+  reviewsSize = window.innerWidth > 600 ? 8 : 4;
   const reviews = await fetch(
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vRvdPYGymrRD4h1QFDE7XszscyA6CBkjOAVZTYA80eY_8ff-YX-RklioBEFeZ2fzxj5KdbXtHeoCvCL/pub?gid=1339441688&single=true&output=csv"
   )
@@ -49,7 +51,6 @@ async function getReviews() {
         ?.filter((review) => review?.productId === productId)
     );
 
-  const reviewsSize = window.innerWidth > 600 ? 8 : 4;
   let reviewsHtmlContent = "";
   console.log({ reviewsSize });
   reviews?.slice(0, reviewsSize)?.forEach((review) => {
@@ -133,16 +134,21 @@ async function getProductInfo() {
   if (product != null) {
     getReviews();
     window.addEventListener("resize", () => {
-      document.getElementById("reviews").innerHTML = `
+      if (
+        (reviewsSize === 8 && window.innerWidth < 600) ||
+        (reviewsSize === 4 && window.innerWidth > 600)
+      ) {
+        document.getElementById("reviews").innerHTML = `
         <div>
         </div>
         <h1 style="font-size: 20px; display: flex; flex-direction: column; gap: 10px; margin: 50px 0; justify-content: center; align-items:center;">
-          <img src="./images/loading.gif" style="width: 70px;" />
-          getting reviews...
+        <img src="./images/loading.gif" style="width: 70px;" />
+        getting reviews...
         </h1>
         <div>
         </div>`;
-      getReviews();
+        getReviews();
+      }
     });
   } else {
     document.getElementById("loading").style.display = "none";

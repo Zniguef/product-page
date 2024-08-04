@@ -52,7 +52,6 @@ async function getReviews() {
     );
 
   let reviewsHtmlContent = "";
-  console.log({ reviewsSize });
   reviews?.slice(0, reviewsSize)?.forEach((review) => {
     reviewsHtmlContent +=
       '<div class="review-card"> ' +
@@ -173,24 +172,6 @@ async function getProductInfo() {
     document.getElementById("error-page").style.display = "flex";
   }
 }
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const formObject = {};
-
-  formData.forEach((value, key) => {
-    if (formObject[key]) {
-      if (!Array.isArray(formObject[key])) {
-        formObject[key] = [formObject[key]];
-      }
-      formObject[key].push(value);
-    } else {
-      formObject[key] = value;
-    }
-  });
-  console.log(formObject);
-});
 
 function calculatePrice() {
   const quantity = isNaN(Number(quantityform.value))

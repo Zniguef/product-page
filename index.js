@@ -111,6 +111,10 @@ async function getProductInfo() {
       el.setAttribute("src", product?.img);
     });
 
+    document.querySelectorAll("#s_o_img").forEach((el) => {
+      el.setAttribute("src", product?.special_offer);
+    });
+
     document.querySelectorAll("#buyNow").forEach((el) => {
       el.textContent += product?.price;
     });

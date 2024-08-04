@@ -263,18 +263,26 @@ body {
   width: fit-content;
 }
 
+.special_offer {
+  padding: 100px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.special_offer #s_o_img {
+  padding: 0 0 50px 0;
+  width: 80%;
+}
+
 .fourth-sec {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px 0;
-}
-
-.fourth-sec h1 {
-  font-size: 60px;
-  text-align: center;
-  color: #414141;
 }
 
 .fourth-sec #reviews {
@@ -318,6 +326,56 @@ body {
 .fourth-sec #reviews .review-card:last-child h1 {
   font-size: 32px;
   direction: rtl;
+}
+
+.question {
+  gap: 50px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.question h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #414141;
+}
+
+.question .question-container {
+  background-color: var(--primary);
+  display: grid;
+  grid-template: auto auto / auto auto auto;
+  justify-content: center;
+  gap: 40px;
+  border-radius: 40px;
+  padding: 100px 120px;
+}
+
+.question .question-container .question-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  width: 250px;
+  padding: 22px 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  direction: rtl;
+}
+
+.question .question-container .question-card h1 {
+  font-size: 25px;
+  font-weight: 600;
+  color: #414141;
+}
+
+.question .question-container .question-card span {
+  font-size: 14px;
+  color: #7e7d7d;
+  width: 100%;
 }
 
 .buy-section {
@@ -578,6 +636,9 @@ body {
   .fourth-sec h1 {
     font-size: 50px;
   }
+  .question h1 {
+    font-size: 50px;
+  }
   #error-page .blob {
     width: 100%;
   }
@@ -664,6 +725,11 @@ body {
   .fourth-sec #reviews {
     grid-template: auto auto / auto auto;
   }
+  .question .question-container {
+    grid-template: auto auto / auto auto;
+    width: 100%;
+    border-radius: 0px;
+  }
   .fourth-sec #reviews .review-card:nth-child(8) {
     display: none;
   }
@@ -746,6 +812,19 @@ body {
     width: 40%;
     height: 1px;
   }
+  .question .question-container {
+    padding: 50px 0;
+    grid-template: auto / auto;
+  }
+  .question .question-container .question-card:nth-child(1) {
+    display: none;
+  }
+  .question .question-container .question-card:nth-child(2) {
+    display: none;
+  }
+  .question .question-container .question-card:nth-child(3) {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -815,6 +894,9 @@ body {
     right: auto;
     transform: translate(0, 0);
     position: relative;
+  }
+  .special_offer #s_o_img {
+    width: 95%;
   }
   .fourth-sec h1 {
     font-size: 40px;

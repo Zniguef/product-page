@@ -92,6 +92,11 @@ async function getProductInfo() {
 
   const product = products.find((pr) => pr?.id === productId);
   if (product !== null) {
+    localStorage.setItem(
+      "primary-color",
+      product?.primaryColor ?? "lightcoral"
+    );
+
     price = parseInt(product?.price?.replace("درهم", ""));
     totalpriceform.textContent = price + " درهم";
     // css color variables
@@ -103,11 +108,22 @@ async function getProductInfo() {
     document.getElementById("sec-sec-prod-name").textContent = product?.name;
     document.getElementById("sec-sec-desc").textContent = product?.secSecDesc;
 
+    document
+      .getElementById("next")
+      .setAttribute(
+        "value",
+        "http://127.0.0.1:5500/thanks.html" + window.location.search
+      );
+
     document.getElementById("product-name").textContent =
       product?.name ?? "مرحباً";
 
     document.querySelectorAll("#product_img").forEach((el) => {
       el.setAttribute("src", product?.img);
+    });
+
+    document.querySelectorAll("#s_o_img").forEach((el) => {
+      el.setAttribute("src", product?.special_offer);
     });
 
     document.querySelectorAll("#buyNow").forEach((el) => {

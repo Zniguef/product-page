@@ -90,40 +90,45 @@
       <h1 class="title">أدخل معلوماتك واستلم منتجك</h1>
 
       <div class="form-container" style="position: relative;">
-        <div class="form">
-          <form id="buy-here-form">
-            <h1 class="sub-title">اشتري هنا </h1>
-            <div class="form-group">
-              <label for="">الاسم الكامل*</label>
-              <input type="text" name="name" placeholder="أدخل أسمك" required
-                oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')" oninput="this.setCustomValidity('')" />
-            </div>
-            <div class="form-group">
-              <label for="">رقم التليفون*</label>
-              <input type="text" name="phone" placeholder="مثال: 0611678143" required
-                oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')" oninput="this.setCustomValidity('')" />
-            </div>
-            <div class="form-group">
-              <label for="">عنوان*</label>
-              <input type="text" name="address" placeholder="مثال: المعاريف، الدار البيضاء" required
-                oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')" oninput="this.setCustomValidity('')" />
-            </div>
-            <div class="form-group">
-              <label for="">كمية*</label>
-              <input type="number" name="quantity" placeholder="أدخل الكمية" required id="quantity-form" min="1"
-                value="1" oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')"
-                oninput="this.setCustomValidity('')" />
-            </div>
+       <div class="form">
+        <form id="buy-here-form" action="https://formsubmit.co/d3c3c300da8618146f663c06de3bb371" method="post" >
+          <h1 class="sub-title">اشتري هنا </h1>
+          <div class="form-group">
+            <label for="">الاسم الكامل*</label>
+            <input type="text" name="name" placeholder="أدخل أسمك" required
+              oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')" oninput="this.setCustomValidity('')" />
+          </div>
+          <input
+                        type="hidden"
+                        name="_next"
+                        value="http://127.0.0.1:5500/thanks.html"
+                      />
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-group">
+            <label for="">رقم التليفون*</label>
+            <input type="text" name="phone" placeholder="مثال: 0611678143" required
+              oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')" oninput="this.setCustomValidity('')" />
+          </div>
+          <div class="form-group">
+            <label for="">عنوان*</label>
+            <input type="text" name="address" placeholder="مثال: المعاريف، الدار البيضاء" required
+              oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')" oninput="this.setCustomValidity('')" />
+          </div>
+          <div class="form-group">
+            <label for="">كمية*</label>
+            <input type="number" name="quantity" placeholder="أدخل الكمية" required id="quantity-form" min="1"
+              value="1" oninvalid="this.setCustomValidity('هذه الخانة مطلوبة')"
+              oninput="this.setCustomValidity('')" />
+          </div>
+          <div class="total">
+            <button type="submit">تأكيد</button>
             <div class="total">
-              <button type="submit">تأكيد</button>
-              <div class="total">
-                <p>المجموع:</p>
-                <span id="total-price-form">0 درهم</span>
-              </div>
+              <p>المجموع:</p>
+              <span id="total-price-form">0 درهم</span>
             </div>
-          </form>
-
-        </div>
+          </div>
+        </form>
+      </div>
 
         <div class="or">
           <span>أو</span>

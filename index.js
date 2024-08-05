@@ -112,7 +112,10 @@ async function getProductInfo() {
       .getElementById("next")
       .setAttribute(
         "value",
-        "http://127.0.0.1:5500/thanks.html" + window.location.search
+        window.location.origin +
+          window.location.pathname.replace("/index.html", "") +
+          "/thanks.html" +
+          window.location.search
       );
 
     document.getElementById("product-name").textContent =

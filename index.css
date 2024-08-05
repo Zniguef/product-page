@@ -825,6 +825,9 @@ body {
   .question .question-container .question-card:nth-child(3) {
     display: none;
   }
+  .special_offer {
+    padding: 50px 0;
+  }
 }
 
 @media screen and (max-width: 600px) {

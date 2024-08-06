@@ -8,6 +8,10 @@ const quantityform = document.getElementById("quantity-form");
 let price = 1;
 let reviewsSize = window.innerWidth > 600 ? 8 : 4;
 
+emailjs.init({
+  publicKey: "8yDA8xqgWyprQp-74",
+});
+
 function csvJSON(csv) {
   const lines = csv.split("\n");
 
@@ -108,16 +112,6 @@ async function getProductInfo() {
     document.getElementById("sec-sec-prod-name").textContent = product?.name;
     document.getElementById("sec-sec-desc").textContent = product?.secSecDesc;
 
-    document
-      .getElementById("next")
-      .setAttribute(
-        "value",
-        window.location.origin +
-          window.location.pathname.replace("/index.html", "") +
-          "/thanks.html" +
-          window.location.search
-      );
-
     document.getElementById("product-name").textContent =
       product?.name ?? "مرحباً";
 
@@ -193,8 +187,16 @@ function calculatePrice() {
     ? 0
     : Number(quantityform.value);
 
-  const total = price * quantity;
-  totalpriceform.textContent = total + " درهم";
+  let total = 0;
+  if (quantity === 2) {
+    total = 249;
+  } else if (quantity === 3) {
+    total = 349;
+  } else {
+    total = price * quantity;
+  }
+
+  totalpriceform.textContent = total + " درهم";
 }
 
 quantityform.addEventListener("change", function () {
@@ -202,3 +204,56 @@ quantityform.addEventListener("change", function () {
 });
 
 getProductInfo();
+
+document
+  .getElementById("confirm-buy-by-form")
+  .addEventListener("click", function () {
+    const areFieldsFilled = [];
+
+    form.childNodes.forEach((e) => {
+      if (e.className === "form-group") {
+        e.childNodes.forEach((ce) => {
+          if (ce.tagName === "INPUT") {
+            if (ce.value === "" || ce.value === null) {
+              areFieldsFilled.push(false);
+            } else {
+              areFieldsFilled.push(true);
+            }
+          }
+        });
+      }
+    });
+
+    if (areFieldsFilled.every((v) => v === true)) {
+      document.getElementById("form-loading").style.display = "flex";
+      form.style.display = "none";
+    }
+  });
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const formObject = {};
+
+  formData.forEach((value, key) => {
+    if (formObject[key]) {
+      if (!Array.isArray(formObject[key])) {
+        formObject[key] = [formObject[key]];
+      }
+      formObject[key].push(value);
+    } else {
+      formObject[key] = value;
+    }
+  });
+
+  await emailjs
+    .send("service_glpg8gl", "template_q3m1yhz", formObject)
+    .then((response) => {
+      if (response?.status === 200) {
+        window.location.pathname = window.location.pathname.replace(
+          "/index.html",
+          "/thanks.html"
+        );
+      }
+    });
+});

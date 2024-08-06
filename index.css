@@ -576,6 +576,21 @@ body {
   width: 70%;
 }
 
+.form-loading {
+  padding: 70px 0;
+  font-size: 24px;
+  display: none;
+  direction: rtl;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.form-loading img {
+  width: 80px;
+}
+
 @media screen and (max-width: 1836px) {
   .first_sec .content div h1 {
     font-size: 80px;

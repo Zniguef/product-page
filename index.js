@@ -1,5 +1,5 @@
 const r = document.querySelector(":root");
-const productId = window.location.search.replace("?id=", "");
+const productId = window.location.search.replace("?id=", "")?.split("&")?.[0];
 
 const form = document.getElementById("buy-here-form");
 const totalpriceform = document.getElementById("total-price-form");

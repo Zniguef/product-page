@@ -196,10 +196,10 @@ function calculatePrice() {
     total = price * quantity;
   }
 
-  totalpriceform.textContent = total + " درهم";
+  totalpriceform.textContent = total + " درهم";
 }
 
-quantityform.addEventListener("change", function () {
+quantityform.addEventListener("input", function () {
   calculatePrice();
 });
 
